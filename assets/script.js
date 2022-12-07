@@ -1,3 +1,9 @@
+let dogeBtn = document.getElementById('doge-btn');
+let birdBtn = document.getElementById('bird-btn');
+let catBtn = document.getElementById('cat-btn');
+let photoEl = document.getElementById('photo-result');
+
+
 // How to open the modal
 $(document).ready(function (){
   $('#jokebox').modal()
@@ -27,27 +33,59 @@ function renderJoke(data) {
   $('#punchline').text(data.punchline);
 }
 
+
+
 // refresh button function
 // var getRefreshBtn = $('#refresh-btn')
 // getRefreshBtn.click(function() {
 //     location.reload();
 // });
 
-// function getaDoge () {
-//     var dogeAPI = 'http://shibe.online/api/shibes?count=[1-100]&urls=true&httpsUrls=true'
-//     fetch(dogeAPI)
-//     .then(function (response){
-//         return response.json()
-//     })
-//     .then(function (data2) {
-//         console.log(data2)
-//         renderDoge(data2)
-//     });
-// }
+
+// The three functions below are used depending on which button is selected. They each call renderImage, which puts the actual picture on the page.
+function getaDoge () {
+    var shibeAPI = 'http://shibe.online/api/shibes?count=[1-100]&urls=true&httpsUrls=true'
+    fetch(shibeAPI)
+    .then(function (response){
+        return response.json()
+    })
+    .then(function (data2) {
+        console.log(data2)
+        renderImage(data2)
+    });
+}
+
+function getaBird () {
+  var shibeAPI = 'http://shibe.online/api/birds?count=[1-100]&urls=true&httpsUrls=true'
+  fetch(shibeAPI)
+  .then(function (response){
+      return response.json()
+  })
+  .then(function (data2) {
+      console.log(data2)
+      renderImage(data2)
+  });
+}
+
+function getaCat () {
+  var shibeAPI = 'http://shibe.online/api/cats?count=[1-100]&urls=true&httpsUrls=true'
+  fetch(shibeAPI)
+  .then(function (response){
+      return response.json()
+  })
+  .then(function (data2) {
+      console.log(data2)
+      renderImage(data2)
+  });
+}
+
+dogeBtn.addEventListener('click', getaDoge);
+birdBtn.addEventListener('click', getaBird);
+catBtn.addEventListener('click', getaCat);
 
 // getaDoge()
 
-// function renderDoge (data2) {
+// function renderImage (data2) {
 //     $('#dogetime').attr('src', data2[0])
 // }
 
