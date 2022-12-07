@@ -6,37 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/style.css">
-    
-    <title>The Box</title>
+    <title>Materialize Practice</title>
 </head>
 <body>
-    
-    <div class="row center container">
+    <div class="container">
         <h1>WELCOME TO THE BOX</h1>
 
-        <div class="purple darken-4 white-text center-align">&nbsp</div>
+        <!-- Thank you to Technophile on codepen.io for the box animation -->
+        <div class="boxbump">
+        <marquee
+        direction="down"
+        width="250"
+        height="250"
+        behavior="alternate"
+        style="border:solid">
+        <marquee behavior="alternate"> the </marquee>
+        <marquee behavior="alternate"> box </marquee>
+      </marquee>
+      </div>
+    
 
-    <div class="row center">
-        <h1>THE BUTTON</h1>
-        </div>
-
-        <!-- Button with a modal trigger -->
+        
         <div class="row center">
-        <a class="btn-large indigo darken-4 waves-effect waves-light modal-trigger" href="#openedbox">Open the Box</a>
+        <h1>The Box</h1>
         </div>
+
+        <!-- could make this a modal later, refer to button above -->
+        <div class="row center">
+          <!-- took out refresh-btn id in the A tag in order to test modal -->
+        <a class="btn-large red darken-4 waves-effect waves-light modal-trigger" href="#jokebox" >The Joke Box</a>
+        </div>
+        
+        <!-- <div id='setup' class="row"></div>
+        <div id='punchline' class="row"></div>
+        <div id="dogetime" class="row"><img src="" alt="doge is here"></div> -->
 
         <!-- Actual modal content -->
-        <div id="openedbox" class="modal">
+        <div id="jokebox" class="modal">
           <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p >A bunch of text</p>
+            <h4>Here's your joke!</h4>
+            <div id='setup' class="row"></div>
+            <div id='punchline' class="row"></div>
           </div>
           <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Dope and Also Rad</a>
           </div>
         </div>
 
-        </div>
+           <!-- doge button with a modal trigger -->
+           <div class="row center">
+            <a class="btn-large brown darken-4 waves-effect waves-light modal-trigger" href="#dogebox">The Doge Box</a>
+            </div>
+    
+            <!-- Actual doge modal content -->
+            <div id="dogebox" class="modal">
+              <div class="modal-content">
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">The Goodest Boy</a>
+              </div>
+            </div>
+
+      <!-- Modal Trigger
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+
+
+ 
+<!-- 
+    <div>
+        <h5 class="left-align">Artist Details</h5>
+    </div>
+        <h5 class="center-align">You Made a Great Choice!</h5>
+    </div>
+        <h5 class="right-align">Similar Artists</h5>
+    </div> -->
 
 
     <script type='text/javascript' src="https://code.jquery.com/jquery-1.12.4.js"></script>
