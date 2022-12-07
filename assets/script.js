@@ -41,6 +41,9 @@ function renderJoke(data) {
 //     location.reload();
 // });
 
+function renderImage(data2) {
+  photoEl.src = data2[0];
+}
 
 // The three functions below are used depending on which button is selected. They each call renderImage, which puts the actual picture on the page.
 function getaDoge () {
