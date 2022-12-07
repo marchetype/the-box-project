@@ -50,13 +50,13 @@ function getAnimal (event) {
   let btn = event.target;
 
   if (btn.textContent === 'Doge') {
-    shibeAPI = 'http://shibe.online/api/shibes?count=[1-100]&urls=true&httpsUrls=true'
+    shibeAPI = 'https://shibe.online/api/shibes?count=[1-100]&urls=true&httpsUrls=true'
 
   } else if (btn.textContent === 'Birds') {
-    shibeAPI = 'http://shibe.online/api/birds?count=[1-100]&urls=true&httpsUrls=true';
+    shibeAPI = 'https://shibe.online/api/birds?count=[1-100]&urls=true&httpsUrls=true';
 
   } else if (btn.textContent === 'Cats') {
-    shibeAPI = 'http://shibe.online/api/cats?count=[1-100]&urls=true&httpsUrls=true';
+    shibeAPI = 'https://shibe.online/api/cats?count=[1-100]&urls=true&httpsUrls=true';
 
   }
   fetch(shibeAPI)
