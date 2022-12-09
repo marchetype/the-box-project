@@ -70,3 +70,7 @@ body {
 main {
   flex: 1 0 auto;
 }
+
+#setup, #punchline, #joke-headline {
+  color: black;
+}
