@@ -2,44 +2,48 @@ let btnDiv = document.getElementById('btn-div')
 let photoEl = document.getElementById('photo-result');
 
 
-// How to open the modal
+// Opening joke modal
 $(document).ready(function (){
   $('#jokebox').modal()
 })
 
-$(document).ready(function(){
-  $('#dogebox').modal();
-});
-
-
+// API grabbing random joke
 function getaJoke() {
-      var jokeAPI = 'https://official-joke-api.appspot.com/random_joke'
-      fetch(jokeAPI)
-      .then(function (response){
-          return response.json()
-      })
-      .then(function (data) {
-          console.log(data)
-          renderJoke(data);
-      });
-  }
-
-getaJoke()
-
-function renderJoke(data) {
-  $('#setup').text(data.setup);
-  $('#punchline').text(data.punchline);
+  var jokeAPI = 'https://official-joke-api.appspot.com/random_joke'
+  fetch(jokeAPI)
+  .then(function (response){
+      return response.json()
+  })
+  .then(function (data) {
+      console.log(data)
+      renderJoke(data);
+  });
 }
 
+// Render jokes
+function renderJoke(data) {
+   
+  var grabSetup = document.querySelector('#setup');
+  var setupLocation = data.setup;
+ grabSetup.innerHTML = setupLocation;
+  
+  var grabPunchline = document.querySelector('#punchline');
+  var punclineLocation = data.punchline;
+  grabPunchline.innerHTML = punclineLocation;
+  
+  console.log()
+  
+}
+
+// Grabbing the joke button
+var jokeBtn = document.getElementById('joke-btn')
+
+// Adding a click event listener to the button
+jokeBtn.addEventListener('click', getaJoke)
 
 
-// refresh button function
-// var getRefreshBtn = $('#refresh-btn')
-// getRefreshBtn.click(function() {
-//     location.reload();
-// });
 
-
+// Mark's stuff comment
 function renderImage(data2) {
   photoEl.src = data2[0];
 }
