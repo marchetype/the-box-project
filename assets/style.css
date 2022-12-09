@@ -28,7 +28,10 @@
   border: 7px solid var(--black);
 }
 
-
+.fav-photo {
+  width: 200px;
+  height: 200px;
+}
 
 
 h2 {

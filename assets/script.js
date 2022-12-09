@@ -1,7 +1,7 @@
 let btnDiv = document.getElementById('btn-div')
 let photoEl = document.getElementById('photo-result');
 let favBtn = document.getElementById('fav-btn');
-let favPhotos = document.getElementById('fav-photos')
+let favPhotosList = document.getElementById('fav-photos')
 
 console.log(photoEl.src);
 
@@ -122,6 +122,18 @@ function setStorage() {
 function displayFavorites() {
   let favImages = localStorage.getItem('saved-images');
   favImages = JSON.parse(favImages);
+
+  while (favPhotosList.firstChild) {
+      favPhotosList.removeChild(favPhotosList.firstChild);
+  }
+  
+
+  for (let i = 0; i < favImages.length; i++) {
+    let image = document.createElement('img');
+    image.className = 'fav-photo';
+    image.src = favImages[i];
+    favPhotosList.appendChild(image);
+  }
   console.log(favImages);
 }
 
@@ -130,7 +142,9 @@ function favoritePhoto () {
   displayFavorites();
 }
 
+displayFavorites();
 favBtnDisplay();
+
 favBtn.addEventListener('click', favoritePhoto);
 btnDiv.addEventListener('click', getAnimal);
 
