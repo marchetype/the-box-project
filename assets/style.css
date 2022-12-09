@@ -1,14 +1,15 @@
 @import url('./utility.css');
 
 :root {
-  --black: #000000;
+  --black: #060606;
+  font: 1em sans-serif;
+  color:gainsboro;
 }
 .boxbump {
     margin: 0;
     min-height: 100px;
     display: grid;
     place-items: center;
-    
     font-family: system-ui, sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -18,12 +19,14 @@
   display: flex;
   justify-content: center;
 }
+
 #photo-result {
   margin: 20px;
   height: 400px;
   width: 400px;
   border-radius: 25px;
   border: 7px solid var(--black);
+
 }
 
 body {
@@ -35,6 +38,10 @@ body {
     animation: gradient 15s ease infinite;
     height: 100vh;
   }
+
+.page-footer{
+  background:#0c290e62 ;
+}
   
   @keyframes gradient {
     0% {
