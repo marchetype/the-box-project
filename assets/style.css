@@ -30,7 +30,23 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-}
+    background: linear-gradient(-45deg, #43ab4f, #270b16, #052e3d, #09568c);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
 main {
   flex: 1 0 auto;
