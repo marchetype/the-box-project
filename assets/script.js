@@ -1,6 +1,7 @@
 let btnDiv = document.getElementById('btn-div')
 let photoEl = document.getElementById('photo-result');
-
+let favBtn = document.getElementById('fav-btn');
+console.log(photoEl.src);
 
 // Opening joke modal
 $(document).ready(function (){
@@ -44,8 +45,18 @@ jokeBtn.addEventListener('click', getaJoke)
 
 
 // Mark's stuff comment
+
+function favBtnDisplay(){
+  if (photoEl.src === '') {
+    favBtn.style.visibility = "hidden";
+  } else {
+    favBtn.style.visibility = "visible";
+  }
+}
+
 function renderImage(data2) {
   photoEl.src = data2[0];
+  favBtnDisplay();
 }
 
 function getAnimal (event) {
@@ -73,6 +84,12 @@ function getAnimal (event) {
   });
 }
 
+function favoritePhoto () {
+
+}
+
+favBtnDisplay();
+//favBtn.addEventListener('click', favoritePhoto);
 btnDiv.addEventListener('click', getAnimal);
 
 
