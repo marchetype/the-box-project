@@ -1,6 +1,8 @@
 let btnDiv = document.getElementById('btn-div')
 let photoEl = document.getElementById('photo-result');
 let favBtn = document.getElementById('fav-btn');
+let favPhotos = document.getElementById('fav-photos')
+
 console.log(photoEl.src);
 
 // Opening joke modal
@@ -84,13 +86,54 @@ function getAnimal (event) {
   });
 }
 
-function favoritePhoto () {
+function setStorage() {
+  let imgArr = localStorage.getItem('saved-images');
+  let img = photoEl.src;
+
+  console.log(img);
+  if (imgArr === null || imgArr === undefined) {
+    imgArr = [];
+    imgArr.push(photoEl.src);
+    localStorage.setItem('saved-images', JSON.stringify(imgArr));
+    console.log(imgArr);
+  } else {
+    imgArr = JSON.parse(imgArr);
+    if (imgArr.length > 5) {
+      console.log(imgArr + " I can't save it");
+    } else {
+      imgArr.push(img);
+      localStorage.setItem('saved-images', JSON.stringify(imgArr));
+    }
+  }
+  // let historyArr = localStorage.getItem('history');
+  //   if(historyArr === null) {
+  //       historyArr = [];
+  //       historyArr.push(cityName);
+  //       localStorage.setItem('history', JSON.stringify(historyArr));
+  //   } else {
+  //       historyArr = JSON.parse(historyArr);
+  //       historyArr.push(cityName);
+  //       localStorage.setItem('history', JSON.stringify(historyArr));
+  //   }
+
 
 }
 
+function displayFavorites() {
+  let favImages = localStorage.getItem('saved-images');
+  favImages = JSON.parse(favImages);
+  console.log(favImages);
+}
+
+function favoritePhoto () {
+  setStorage();
+  displayFavorites();
+}
+
 favBtnDisplay();
-//favBtn.addEventListener('click', favoritePhoto);
+favBtn.addEventListener('click', favoritePhoto);
 btnDiv.addEventListener('click', getAnimal);
+
 
 
 
