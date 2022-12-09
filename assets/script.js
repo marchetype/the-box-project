@@ -120,21 +120,23 @@ function setStorage() {
 }
 
 function displayFavorites() {
-  let favImages = localStorage.getItem('saved-images');
+  let favImages = localStorage.getItem('saved-images');console.log(favImages);
+  // if (favImages === ''
   favImages = JSON.parse(favImages);
 
   while (favPhotosList.firstChild) {
       favPhotosList.removeChild(favPhotosList.firstChild);
   }
   
-
-  for (let i = 0; i < favImages.length; i++) {
-    let image = document.createElement('img');
-    image.className = 'fav-photo';
-    image.src = favImages[i];
-    favPhotosList.appendChild(image);
-  }
-  console.log(favImages);
+  if (favImages !== null) {
+    for (let i = 0; i < favImages.length; i++) {
+      let image = document.createElement('img');
+      image.className = 'fav-photo';
+      image.src = favImages[i];
+      favPhotosList.appendChild(image);
+    }
+  }  
+//  console.log(favImages);
 }
 
 function favoritePhoto () {
