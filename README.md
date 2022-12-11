@@ -2,7 +2,7 @@
 
 ## Description
 
-To use THE BOX, you will be prompted to select between enjoying a silly joke and looking at some preference animal's picture by clicking a button.
+To use THE BOX, you will be prompted to select between enjoying a silly joke and looking at some preference animal's picture by clicking a button and save the one you like.
 
 ## Installation
 
@@ -11,11 +11,12 @@ N/A
 ## Mock-Up
 
 The following image shows the our web application's appearance and functionality:
-// addeding a pic how our page looks like//
+![The silly and funny box](./assets/image/The%20Box.png)
+
 
 ## Usage
 
-To use The Box, Open the page link //add the link//, you can click on the several interactive buttons on the page where you can select whether you want to enjoy foolish jokes or images of different animals pictures. You will have the ability to select the animal you prefer and save the specific image.
+To use The Box, Open the page link [The Box](https://marchetype.github.io/group-project-1/), you can click on the several interactive buttons on the page where you can select whether you want to enjoy foolish jokes or images of different animals pictures. You will have the ability to select the animal you prefer and save the specific image.
 
 ## Credits
 
