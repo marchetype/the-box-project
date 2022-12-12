@@ -166,12 +166,14 @@ const myArray = [1, 2, 3, 4, 5];//may try the array again at some point
 /* Start Box Functioning */
 openMagsModal.addEventListener('click', function(e){
     magsModal.style.display = 'block';
+    body.style.overflow = 'hidden';
 startBox(e);
 })
 
 /* Close Bored Box */
 close.addEventListener('click', function(){
     magsModal.style.display = 'none';
+    body.style.overflow = 'auto';
 })
 
 /* Function Beginning of Box */

@@ -337,4 +337,16 @@ body {
   #hadtoremovetohere {
     padding-bottom: 15px;
   }
+
+  @media (max-width: 600px){
+    .activity{
+        width: 300px;
+        height: 275px;
+    }
+    
+    #user-Input {
+        width: 260px;
+        height: 115px;
+    }
+  }
 /* zMaG33z */
