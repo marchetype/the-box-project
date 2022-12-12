@@ -1,4 +1,7 @@
 :root {
+    --black: #060606;
+        font: 1em sans-serif;
+        color:gainsboro;
     --OutputBB: rgb(42, 121, 42);
     --myBGgradient: radial-gradient(rgb(151, 55, 55), rgb(76, 76, 135) 100%);
     --buttonBG: rgb(19, 19, 147);

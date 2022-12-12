@@ -1,9 +1,14 @@
 @import url('./utility.css');
 
-:root {
-  --black: #060606;
-  font: 1em sans-serif;
-  color:gainsboro;
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+    background: linear-gradient(-45deg, #43ab4f, #270b16, #052e3d, #09568c);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
 }
 
 .boxbump {
@@ -14,7 +19,7 @@
     font-family: system-ui, sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
-  }
+}
 
 .card-image{
   display: flex;
@@ -35,37 +40,15 @@
   height: 200px;
 }
 
-
 h2 {
   font-size: 16px;
   margin: none;
 }
 
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-    background: linear-gradient(-45deg, #43ab4f, #270b16, #052e3d, #09568c);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    height: 100vh;
-  }
-
-.page-footer{
-  background:#0c290e62 ;
+/* Button container to separate from calling doge event */
+#btn-div {
+  display: inline-block;
 }
-  
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
 
 /* Mags Modal */
 /* Box contains all to their perspective positions */
@@ -333,10 +316,6 @@ body {
   .mags-Btn:hover {
       background-color: var(--buttonBGH);
   }
-  /* div created because interfering with doge fetch */
-  #hadtoremovetohere {
-    padding-bottom: 15px;
-  }
 
   @media (max-width: 600px){
     .activity{
@@ -350,3 +329,19 @@ body {
     }
   }
 /* zMaG33z */
+
+.page-footer{
+  background:#0c290e62 ;
+}
+  
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
