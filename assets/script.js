@@ -3,7 +3,6 @@ let photoEl = document.getElementById('photo-result');
 let favBtn = document.getElementById('fav-btn');
 let favPhotosList = document.getElementById('fav-photos')
 
-console.log(photoEl.src);
 
 // Opening joke modal
 $(document).ready(function (){
@@ -18,7 +17,6 @@ function getaJoke() {
       return response.json()
   })
   .then(function (data) {
-      console.log(data)
       renderJoke(data);
   });
 }
@@ -34,8 +32,6 @@ function renderJoke(data) {
   var punclineLocation = data.punchline;
   grabPunchline.innerHTML = punclineLocation;
   
-  console.log()
-  
 }
 
 // Grabbing the joke button
@@ -46,8 +42,7 @@ jokeBtn.addEventListener('click', getaJoke)
 
 
 
-// Mark's stuff comment
-
+// Displays 'favorite' button if photoEl does not have an empty source.
 function favBtnDisplay(){
   if (photoEl.src === '') {
     favBtn.style.visibility = "hidden";
@@ -56,11 +51,13 @@ function favBtnDisplay(){
   }
 }
 
+// Image is rendered to the center photoEl
 function renderImage(data2) {
   photoEl.src = data2[0];
   favBtnDisplay();
 }
 
+// Function below is used to fetch API link based on the button selected within btnDiv
 function getAnimal (event) {
 
   var shibeAPI
@@ -81,7 +78,6 @@ function getAnimal (event) {
       return response.json()
   })
   .then(function (data2) {
-      console.log(data2)
       renderImage(data2)
   });
 }
@@ -90,12 +86,11 @@ function setStorage() {
   let imgArr = localStorage.getItem('saved-images');
   let img = photoEl.src;
 
-  console.log(img);
   if (imgArr === null || imgArr === undefined) {
     imgArr = [];
     imgArr.push(photoEl.src);
     localStorage.setItem('saved-images', JSON.stringify(imgArr));
-    console.log(imgArr);
+
   } else {
     imgArr = JSON.parse(imgArr);
     if (imgArr.length > 5) {
@@ -103,41 +98,26 @@ function setStorage() {
     } else {
       imgArr.push(img);
       localStorage.setItem('saved-images', JSON.stringify(imgArr));
-    }
-  }
-  // let historyArr = localStorage.getItem('history');
-  //   if(historyArr === null) {
-  //       historyArr = [];
-  //       historyArr.push(cityName);
-  //       localStorage.setItem('history', JSON.stringify(historyArr));
-  //   } else {
-  //       historyArr = JSON.parse(historyArr);
-  //       historyArr.push(cityName);
-  //       localStorage.setItem('history', JSON.stringify(historyArr));
-  //   }
+    }}}
 
-
-}
-
+// Function below is used to display the saved images within localStorage.
 function displayFavorites() {
-  let favImages = localStorage.getItem('saved-images');console.log(favImages);
-  // if (favImages === ''
+  let favImages = localStorage.getItem('saved-images');
   favImages = JSON.parse(favImages);
 
+// While statement is used to remove any outdated array of appended children
   while (favPhotosList.firstChild) {
       favPhotosList.removeChild(favPhotosList.firstChild);
   }
-  
+
+// Appending child images.
   if (favImages !== null) {
     for (let i = 0; i < favImages.length; i++) {
       let image = document.createElement('img');
       image.className = 'fav-photo';
       image.src = favImages[i];
       favPhotosList.appendChild(image);
-    }
-  }  
-//  console.log(favImages);
-}
+    }}}
 
 function favoritePhoto () {
   setStorage();
@@ -150,33 +130,6 @@ favBtnDisplay();
 favBtn.addEventListener('click', favoritePhoto);
 btnDiv.addEventListener('click', getAnimal);
 
-
-
-
-
-
-// Grabbing the inside value of the div (hopefully)
-// var relatedArtistSpot = $('#artist-spot').val();
-// var coldplay = '4gzpq5DPGxSnKTe4SA8HAU'
-
-
-
-
-
-
-// Failed attempt at: Function to pull related artists API from Spoftify (hopefully again)
-// function getRelatedArtists() {
-//     var relatedArtists = `https://api.spotify.com/v1/artists/4gzpq5DPGxSnKTe4SA8HAU/related-artists`
-//     fetch(relatedArtists)
-//     .then(function (response){
-//         return response.json()
-//     })
-//     .then(function (data) {
-      
-//     });
-// }
-
-// getRelatedArtists()
 
 /* Bored Box */
 /*Api used - https://www.boredapi.com/documentation#endpoints-key */
