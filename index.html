@@ -64,6 +64,10 @@
             </div>
           </div>
         </div>
+        <!--Had to put button here.  Interfering with doge box.  Prompts unwanted local fetch. -->
+        <div id="hadtoremovetohere">
+          <a id="open-Mags-Modal" class="red waves-effect waves-light btn">Bored Box?</a>
+        </div>
 
         <!-- Joke Modal Stuff -->
           <div id="jokebox" class="modal">
@@ -78,6 +82,71 @@
             </div>
           </div>
 
+          <div id="mags-Modal">
+
+            <div class="activity">
+        
+                <section class="first-Form "><!--Class addition being made. DO NOT remove space.-->
+                    <span class="close">&times;</span>
+                    <form id="text-Suggestion">
+                        <label id="checkOut" for="user-Input">If you're really bored.  Check out this box.</label>
+                            <div class="top-Space">
+                                <textarea id="user-Input" name="funIdea" onfocus="this.value=''" cols="50"></textarea>
+                            </div>
+                            <div class="top-Space">
+                                <input id="suggest-Submit" class="placement mags-Btn" for="text-Suggestion" type="submit" value="Button">
+                                <button id="goto-Stored" class="mags-Btn" type="button">View Stored Idea</button>
+                            </div>
+                    </form>
+                </section>
+        
+                <section class="second-Form "><!--Class addition being made. DO NOT remove space.-->
+                    <form id="seriously">
+                        <label id="seriously-Select" for="number-Select">No seriously.<br>Hit the button or choose a number.</label>
+                            <div class="top-Space btn-placement">
+                                <input id="number-Submit" class="mags-Btn" for="number-Select" type="submit" value="Button">
+                            </div>
+                            <div class="btn-placement">
+                                <select id="number-Select" class="mags-Btn" onchange="selectionInput()">
+                                    <option value="1">Self</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                    </form>
+                </section>
+        
+                <section class="fun-Idea "><!--Class addition being made. DO NOT remove space.-->
+                    <label id="idea-Head">Now Get Out of the Box<br>and Go</label>
+                        <div class="top-Space">
+                            <span id="idea-Output">Idea Output Here.</span>
+                        </div>
+                        <div class="top-Space">
+                            <button id="try-Again" class="placement mags-Btn" type="button">Go Back</button>
+                            <button id="store-Idea" class="mags-Btn" type="button">Store This Idea</button>
+                        </div>
+                </section>
+        
+                <section class="view-Stored "><!--Class addition being made. DO NOT remove space.-->
+                    <label id ="stored-Idea">Here is your stored idea.<br>Now go have fun.</label>
+                        <div class="top-Space">    
+                            <span id="stored-Output">Stored Ouput Here</span>
+                        </div>
+                        <div class="top-Space">
+                            <button id="go-Back" class="mags-Btn" type="button">Go Back</button>
+                        </div>
+                </section>
+        
+                <section class="no-Storage "><!--Class addition being made. DO NOT remove space.-->
+                    <label id="no-Stored">Oops!<br>Looks like you don't have a stored Idea.</label>
+                    <div class="top-Space">
+                        <button id="back" class="mags-Btn" type="button">Go back</button>
+                    </div>
+                </section>
+            </div>
+        </div>
 
  <!-- The box footer-->
         <footer class="page-footer">
