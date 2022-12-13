@@ -56,6 +56,9 @@ body {
     margin: 0 auto;
 }
 
+.leftMarg {
+    margin-left: 20px;
+}
 
 #photo-result {
   margin: 0 auto;
@@ -73,6 +76,10 @@ body {
 
 .margTop {
     padding-top: 20px;
+}
+
+.inlineB {
+    display: inline-block;
 }
 
 h2 {
