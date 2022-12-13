@@ -9,11 +9,11 @@
     <title>The Box Project</title>
 </head>
 <body>
-      <div class="container">
-        <h1 class="row center" >WELCOME TO THE BOX</h1>
+  <div class="container">
+    <h1 class="row center">WELCOME TO THE BOX</h1>
 
-        <!-- Thank you to Technophile on codepen.io for the box animation -->
-        <div class="boxbump">
+    <!-- Thank you to Technophile on codepen.io for the box animation -->
+    <div class="boxbump">
           <marquee
             direction="down"
             width="250"
@@ -23,149 +23,152 @@
               <marquee behavior="alternate"> the </marquee>
               <marquee behavior="alternate"> box </marquee>
           </marquee>
-        </div>
-        
-        <div class="row center">
-          <h1>The Box</h1>
-        </div>
-        
-        <div class="row-center">
-          <div class="col s12 m6">
-            <div class="card #2e7d32 green darken-3">
-              <div class="card-image">
-                <div class="valign-wrapper">
-                  <a class="waves-effect waves-light btn center-align" id="fav-btn"><p>Favorite</p></a>
-                </div>
-
-                <img id="photo-result">
-
-                <aside>
-                  <ul id="fav-photos">
-                  </ul>
-                </aside>
-              </div>                
-              
-              <div class="card-content white-text">
-                <p>Please indicate which animal you'd like a photo of:</p>
-              </div>
-              <!-- Div below used to indicate which API link to fetch -->
-              <div class="card-action">
-                <!-- btn-div id is used specifically for shibeAPI link -->
-                <div id="btn-div">
-                  <a class="waves-effect waves-light btn">Doge</a>
-                  <a class="waves-effect waves-light btn">Birds</a>
-                  <a class="waves-effect waves-light btn">Cats</a>
-                </div>
-                <a class="red waves-effect waves-light btn modal-trigger" href="#jokebox" id="joke-btn">The Joke Box</a>
-                <a id="open-Mags-Modal" class="red waves-effect waves-light btn">Bored Box?</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Joke Modal Stuff -->
-        <div id="jokebox" class="modal">
-          <div class="modal-content">
-            <h4>Here's your joke!</h4>
-             <!-- punchline and setup in the modal -->
-          <div id='setup' class="row"></div>
-          <div id='punchline' class="row"></div>
-        </div>
-
-        <div class="modal-footer">
-          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Dope and Also Rad</a>
-        </div>
-      </div>
-
-    <div id="mags-Modal">
-      <div class="activity">        
-        <section class="first-Form "><!--Class addition being made. DO NOT remove space.-->
-          <span class="close">&times;</span>
-              <form id="text-Suggestion">
-                <label id="checkOut" for="user-Input">If you're really bored.  Check out this box.</label>
-                    <div class="top-Space">
-                        <textarea id="user-Input" name="funIdea" onfocus="this.value=''" cols="50"></textarea>
-                    </div>
-                    <div class="top-Space">
-                        <input id="suggest-Submit" class="placement mags-Btn" for="text-Suggestion" type="submit" value="Button">
-                        <button id="goto-Stored" class="mags-Btn" type="button">View Stored Idea</button>
-                    </div>
-              </form>
-        </section>
-        
-        <section class="second-Form "><!--Class addition being made. DO NOT remove space.-->
-            <form id="seriously">
-                <label id="seriously-Select" for="number-Select">No seriously.<br>Hit the button or choose a number.</label>
-                    <div class="top-Space btn-placement">
-                        <input id="number-Submit" class="mags-Btn" for="number-Select" type="submit" value="Button">
-                    </div>
-                    <div class="btn-placement">
-                        <select id="number-Select" class="mags-Btn" onchange="selectionInput()">
-                            <option value="1">Self</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-            </form>
-        </section>
-        
-        <section class="fun-Idea "><!--Class addition being made. DO NOT remove space.-->
-            <label id="idea-Head">Now Get Out of the Box<br>and Go</label>
-                <div class="top-Space">
-                    <span id="idea-Output">Idea Output Here.</span>
-                </div>
-                <div class="top-Space">
-                    <button id="try-Again" class="placement mags-Btn" type="button">Go Back</button>
-                    <button id="store-Idea" class="mags-Btn" type="button">Store This Idea</button>
-                </div>
-        </section>
-        
-        <section class="view-Stored "><!--Class addition being made. DO NOT remove space.-->
-            <label id ="stored-Idea">Here is your stored idea.<br>Now go have fun.</label>
-                <div class="top-Space">    
-                    <span id="stored-Output">Stored Ouput Here</span>
-                </div>
-                <div class="top-Space">
-                    <button id="go-Back" class="mags-Btn" type="button">Go Back</button>
-                </div>
-        </section>
-        
-        <section class="no-Storage "><!--Class addition being made. DO NOT remove space.-->
-            <label id="no-Stored">Oops!<br>Looks like you don't have a stored Idea.</label>
-                <div class="top-Space">
-                    <button id="back" class="mags-Btn" type="button">Go back</button>
-                </div>
-        </section>
-      </div>
     </div>
 
+  <div class="row center boxHead">
+    <h1 class="newMarg">The Box</h1>
+  </div>
+        
+  <div class="row-center borderIt">
+    <div class="col s12 m6">
+      <div class="card #2e7d32 green darken-3 dropMarg">
+        <div class="card-image padTop">
+
+          <div class="result-container">
+            <img id="photo-result">
+          </div>
+
+          <div class="valign-wrapper">
+            <a class="waves-effect waves-light btn center-align" id="fav-btn"><p>Favorite</p></a>
+          </div>
+
+          <div class="margAuto">
+            <div id="fav-photos"></div>
+          </div>
+
+        </div>                
+              
+        <div class="card-content white-text padBottom">
+          <p>Please indicate which animal you'd like a photo of:</p>
+        </div>
+        <!-- Div below used to indicate which API link to fetch -->
+        <div class="card-action">
+          <!-- btn-div id is used specifically for shibeAPI link -->
+          <div id="btn-div">
+            <a class="waves-effect waves-light btn">Doge</a>
+            <a class="waves-effect waves-light btn">Birds</a>
+            <a class="waves-effect waves-light btn">Cats</a>
+          </div>
+        <div class="margTop">
+          <a class="red waves-effect waves-light btn modal-trigger" href="#jokebox" id="joke-btn">The Joke Box</a>
+          <a id="open-Mags-Modal" class="red waves-effect waves-light btn">Bored Box?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Joke Modal Stuff -->
+  <div id="jokebox" class="modal">
+    <div class="modal-content">
+      <h4>Here's your joke!</h4>
+             <!-- punchline and setup in the modal -->
+    <div id='setup' class="row"></div>
+    <div id='punchline' class="row"></div>
+  </div>
+
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Dope and Also Rad</a>
+  </div>
+  
+  <div id="mags-Modal">
+    <div class="activity">        
+      <section class="first-Form "><!--Class addition being made. DO NOT remove space.-->
+        <span class="close">&times;</span>
+            <form id="text-Suggestion">
+            <label id="checkOut" for="user-Input">If you're really bored.  Check out this box.</label>
+                  <div class="top-Space">
+                      <textarea id="user-Input" name="funIdea" onfocus="this.value=''" cols="50"></textarea>
+                  </div>
+                  <div class="top-Space">
+                    <input id="suggest-Submit" class="placement mags-Btn" for="text-Suggestion" type="submit" value="Button">
+                    <button id="goto-Stored" class="mags-Btn" type="button">View Stored Idea</button>
+                  </div>
+            </form>
+      </section>
+        
+      <section class="second-Form "><!--Class addition being made. DO NOT remove space.-->
+        <form id="seriously">
+        <label id="seriously-Select" for="number-Select">No seriously.<br>Hit the button or choose a number.</label>
+          <div class="top-Space btn-placement">
+            <input id="number-Submit" class="mags-Btn" for="number-Select" type="submit" value="Button">
+          </div>
+          <div class="btn-placement">
+            <select id="number-Select" class="mags-Btn" onchange="selectionInput()">
+              <option value="1">Self</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </form>
+      </section>
+        
+      <section class="fun-Idea "><!--Class addition being made. DO NOT remove space.-->
+        <label id="idea-Head">Now Get Out of the Box<br>and Go</label>
+          <div class="top-Space">
+            <span id="idea-Output">Idea Output Here.</span>
+          </div>
+          <div class="top-Space">
+            <button id="try-Again" class="placement mags-Btn" type="button">Go Back</button>
+            <button id="store-Idea" class="mags-Btn" type="button">Store This Idea</button>
+          </div>
+      </section>
+        
+      <section class="view-Stored "><!--Class addition being made. DO NOT remove space.-->
+        <label id ="stored-Idea">Here is your stored idea.<br>Now go have fun.</label>
+          <div class="top-Space">    
+            <span id="stored-Output">Stored Ouput Here</span>
+          </div>
+          <div class="top-Space">
+            <button id="go-Back" class="mags-Btn" type="button">Go Back</button>
+          </div>
+      </section>
+        
+      <section class="no-Storage "><!--Class addition being made. DO NOT remove space.-->
+        <label id="no-Stored">Oops!<br>Looks like you don't have a stored Idea.</label>
+          <div class="top-Space">
+            <button id="back" class="mags-Btn" type="button">Go back</button>
+          </div>
+      </section>
+    </div>
+  </div>
+</div>
  <!-- The box footer-->
-        <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">The Box</h5>
-                <p class="grey-text text-lighten-4">Life can be hectic so make we want to sure to include humor in your daily routine. That is the main purpose of our page "to make you smile.". </p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Sources</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="https://materializecss.com/">Materialize</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://official-joke-api.appspot.com/random_joke">Joke's API</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://shibe.online/">Img's API</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">The Box</h5>
+          <p class="grey-text text-lighten-4">Life can be hectic so make we want to sure to include humor in your daily routine. That is the main purpose of our page "to make you smile.". </p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Sources</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="https://materializecss.com/">Materialize</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://official-joke-api.appspot.com/random_joke">Joke's API</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://shibe.online/">Img's API</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
             © 2022 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!"></a>
-            </div>
-          </div>
-        </footer>
+      <a class="grey-text text-lighten-4 right" href="#!"></a>
+      </div>
+    </div>
+  </footer>
 
     <script type='text/javascript' src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

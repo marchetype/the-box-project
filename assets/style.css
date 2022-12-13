@@ -21,13 +21,44 @@ body {
     font-weight: 700;
 }
 
-.card-image{
-  display: flex;
-  justify-content: center;
+.boxHead {
+    margin-top: 30px;
+    margin-bottom: 0;
+    border-style: double;
 }
 
+.newMarg {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.borderIt {
+    border-style: solid;
+    border-top-style: none;
+    margin-bottom: 30px;
+}
+
+.dropMarg {
+    margin: 0 0 0 0;
+}
+
+.card-image{
+  display: flex;
+
+}
+
+.padTop {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.margAuto {
+    margin: 0 auto;
+}
+
+
 #photo-result {
-  margin: 20px;
+  margin: 0 auto;
   height: 400px;
   width: 400px;
   border-radius: 25px;
@@ -40,14 +71,13 @@ body {
   height: 200px;
 }
 
+.margTop {
+    padding-top: 20px;
+}
+
 h2 {
   font-size: 16px;
   margin: none;
-}
-
-/* Button container to separate from calling doge event */
-#btn-div {
-  display: inline-block;
 }
 
 /* Mags Modal */
@@ -317,21 +347,13 @@ h2 {
       background-color: var(--buttonBGH);
   }
 
-  @media (max-width: 600px){
-    .activity{
-        width: 300px;
-        height: 275px;
-    }
-    
-    #user-Input {
-        width: 260px;
-        height: 115px;
-    }
-  }
 /* zMaG33z */
 
 .page-footer{
   background:#0c290e62 ;
+  border-style: double;
+  border-bottom-style: none;
+  border-color: white;
 }
   
 @keyframes gradient {
@@ -344,4 +366,53 @@ h2 {
   100% {
     background-position: 0% 50%;
   }
+}
+
+/* media queies */
+@media (max-width: 970px){
+    #photo-result {
+        width: 300px;
+        height: 300px;
+
+    }
+}
+
+@media (max-width: 800px){
+    #photo-result {
+        width: 250px;
+        height: 250px;
+    }
+
+}
+
+@media (max-width: 600px){
+ .activity{
+    width: 300px;
+    height: 275px;
+}
+
+@media (max-width: 500px){
+    .valign-wrapper {
+        display: none;
+    }
+    .margAuto {
+        display: none;
+    }
+}
+
+@media (max-width: 400px){
+    #photo-result {
+        width: 250px;
+        height: 250px;
+    }
+    .fav-photo {
+        width: 175px;
+        height: 175px;
+    }
+}
+
+#user-Input {
+    width: 260px;
+    height: 115px;
+}
 }
